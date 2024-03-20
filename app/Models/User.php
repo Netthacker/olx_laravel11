@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'state_id'
     ];
 
     /**
@@ -44,4 +45,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+
+    public function state(){
+        return $this->belongsTo(State::class);
+    }
+
+    public function advertises(){
+        return $this->hasMany(Advertise::class);
+    }
+
+    
+
 }
