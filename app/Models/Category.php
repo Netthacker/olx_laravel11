@@ -16,4 +16,8 @@ class Category extends Model
     public function advertises(){
         return $this->hasMany(Advertise::class);
     }
+
+    public function list(){
+        return $this->orderBy('id')->pluck('name');
+    }
 }
